@@ -1,0 +1,135 @@
+/* Fælles farver og grundlayout */
+:root {
+  --baggrund: #f4efe6;
+  --tekst: #292823;
+  --moerk: #232522;
+  --bordeaux: #602b37;
+  --rav: #d4ae73;
+  --kant: #d8cfc1;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--baggrund); color: var(--tekst); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.7; }
+a { color: inherit; text-underline-offset: 5px; }
+a:focus-visible { outline: 3px solid #ad7330; outline-offset: 6px; }
+p { margin: 0 0 1.2rem; }
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; line-height: 1.12; }
+h1 { font-size: clamp(3rem, 5.8vw, 5.6rem); letter-spacing: -0.045em; margin: 1.2rem 0 1.8rem; }
+h2 { font-size: clamp(2rem, 3.3vw, 3.3rem); letter-spacing: -0.035em; margin: 0 0 1.4rem; }
+h3 { font-size: 1.65rem; margin: 0 0 1rem; }
+em { color: var(--bordeaux); font-weight: normal; }
+main, .sidehoved-indhold, .sidefod { width: min(1180px, calc(100% - 80px)); margin-inline: auto; }
+.overlinje { font-size: 0.72rem; font-weight: bold; letter-spacing: 0.17em; text-transform: uppercase; margin-bottom: 1rem; }
+.intro { font-size: 1.25rem; line-height: 1.6; }
+
+/* Navigationen er synlig på alle skærmstørrelser. */
+.sidehoved { border-bottom: 1px solid var(--kant); }
+.sidehoved-indhold { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 108px; }
+.logo { font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; font-weight: bold; text-decoration: none; letter-spacing: -0.06em; white-space: nowrap; }
+.logo span { color: #a56f3b; }
+nav { display: flex; gap: 36px; }
+nav a { padding: 12px 0; text-decoration: none; font-size: 0.9rem; border-bottom: 2px solid transparent; }
+nav a:hover, nav a[aria-current="page"] { border-bottom-color: var(--bordeaux); color: var(--bordeaux); }
+.spring-link { position: absolute; top: -100px; left: 20px; padding: 12px 20px; background: var(--baggrund); z-index: 10; }
+.spring-link:focus { top: 12px; }
+
+/* Forside: tekst og billeder fra Images-mappen. */
+.hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 70px; align-items: stretch; padding: 76px 0 80px; }
+.hero-tekst > p:not(.overlinje) { max-width: 510px; }
+.handlinger { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 32px; }
+.knap { display: inline-flex; justify-content: space-between; align-items: center; gap: 24px; padding: 15px 22px; background: var(--bordeaux); color: #fff8ed; text-decoration: none; font-size: 0.9rem; }
+.knap:hover { background: #47202a; }
+.tekstlink { font-size: 0.9rem; font-weight: bold; }
+.tekstlink:hover { color: var(--bordeaux); }
+/* Billederne følger kolonnens bredde uden at blive strakt. */
+.hero-foto { margin: 0; min-width: 0; background: var(--moerk); color: var(--baggrund); border-top: 5px solid var(--bordeaux); }
+.hero-foto img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.hero-foto figcaption { padding: 18px 24px; font-family: Georgia, 'Times New Roman', serif; font-size: 1.25rem; }
+.stemning-foto { display: block; width: 100%; height: auto; margin-top: 24px; }
+.koncept, .vinudvalg { border-top: 1px solid var(--kant); padding: 52px 0 64px; }
+.sektionshoved { margin-bottom: 36px; }
+.tre-kolonner { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.trin { border-top: 1px solid var(--kant); padding-top: 24px; }
+.nummer { display: block; color: var(--bordeaux); font-family: Georgia, 'Times New Roman', serif; font-size: 1.2rem; margin-bottom: 20px; }
+.trin p { margin-bottom: 0; }
+.to-kolonner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding: 52px; margin-bottom: 72px; }
+.stemning { background: #e9e2d7; }
+
+/* Undersider */
+.side-intro { max-width: 770px; padding: 70px 0 48px; }
+.oplysning { border-left: 2px solid var(--bordeaux); padding-left: 18px; font-size: 0.9rem; }
+.vin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.vin-kort { border: 1px solid var(--kant); padding: 32px; }
+.vin-kort h3 { font-size: 2rem; }
+.vin-kort .overlinje { display: flex; align-items: center; gap: 12px; }
+.vin-prik { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid #806a52; }
+.roed { background: #7a3444; }
+.hvid { background: #dfc988; }
+.rose { background: #d69a88; }
+.bobler { background: #f0dfb4; }
+.smagsnote { border-top: 1px solid var(--kant); padding-top: 18px; margin: 24px 0 0; font-size: 0.9rem; }
+.betal { background: var(--moerk); color: var(--baggrund); }
+.betal .overlinje { color: var(--rav); }
+.betal .tekstlink:hover { color: var(--rav); }
+.regnestykke { border-block: 1px solid #66675b; padding: 18px 0; color: var(--rav); }
+.besoeg-grid { border-top: 1px solid var(--kant); padding: 48px 0 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.besoeg-tekst { max-width: 410px; }
+.praktisk-kort { padding: 12px 32px; background: #e9e2d7; }
+.praktisk-kort section { padding: 24px 0; }
+.praktisk-kort section + section { border-top: 1px solid #cbbfae; }
+.praktisk-kort p { margin-bottom: 8px; }
+.pladsholder { color: #654936; font-size: 0.9rem; }
+.afslutning { text-align: center; padding: 48px 24px; background: var(--moerk); color: var(--baggrund); margin-bottom: 72px; }
+.afslutning .overlinje { color: var(--rav); }
+.afslutning .knap { margin-top: 12px; background: var(--rav); color: var(--moerk); }
+.afslutning .knap:hover { background: #e1bf8b; }
+.sidefod { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 32px; border-top: 1px solid var(--kant); padding-block: 30px; }
+.sidefod p { margin: 0; font-size: 0.8rem; }
+.sidefod .logo { font-size: 1.5rem; }
+.projekt-note { margin-left: auto !important; }
+
+/* FAQ: Hvert spørgsmål kan åbnes uden JavaScript. */
+.faq-boks { border: 1px solid var(--kant); background: #e9e2d7; margin-bottom: 16px; }
+.faq-boks summary { padding: 20px 24px; cursor: pointer; }
+.faq-boks summary h3 { display: inline; font-size: 1.25rem; line-height: 1.4; margin: 0; }
+.faq-boks summary::marker { color: var(--bordeaux); }
+.faq-boks summary:hover { color: var(--bordeaux); }
+.faq-boks summary:focus-visible { outline: 3px solid #ad7330; outline-offset: 3px; }
+.faq-boks[open] summary { border-bottom: 1px solid var(--kant); }
+.faq-boks > p { padding: 20px 24px; margin: 0; }
+
+/* Sammenligning: tabellen kan rulles vandret på små skærme og med tastatur. */
+.tabel-ramme { max-width: 100%; overflow-x: auto; }
+.tabel-ramme:focus-visible { outline: 3px solid #ad7330; outline-offset: 6px; }
+.tabel-ramme table { width: 100%; border-collapse: collapse; }
+.tabel-ramme caption { text-align: left; margin-bottom: 16px; font-weight: bold; }
+.tabel-ramme th, .tabel-ramme td { text-align: left; vertical-align: top; padding: 16px; border: 1px solid var(--kant); }
+.tabel-ramme thead { background: #e9e2d7; }
+
+/* Tablet */
+@media (max-width: 950px) {
+  main, .sidehoved-indhold, .sidefod { width: calc(100% - 48px); }
+  .hero { gap: 32px; padding-block: 48px; }
+  .to-kolonner { padding: 32px; gap: 32px; }
+  .besoeg-grid { gap: 40px; }
+  .tre-kolonner { gap: 24px; }
+}
+
+/* Mobil: indholdet lægges i én kolonne uden en skjult menu. */
+@media (max-width: 680px) {
+  main, .sidehoved-indhold, .sidefod { width: calc(100% - 40px); }
+  .sidehoved-indhold { flex-direction: column; gap: 8px; padding-block: 20px 10px; }
+  nav { width: 100%; justify-content: space-around; gap: 16px; }
+  .hero, .tre-kolonner, .to-kolonner, .vin-grid, .besoeg-grid { grid-template-columns: 1fr; }
+  .hero { gap: 36px; padding-block: 40px; }
+  .koncept, .vinudvalg { padding-block: 36px 44px; }
+  .tre-kolonner { gap: 28px; }
+  .to-kolonner { padding: 28px 24px; gap: 12px; margin-bottom: 44px; }
+  .side-intro { padding: 40px 0 24px; }
+  .vin-kort { padding: 26px; }
+  .besoeg-grid { gap: 24px; padding-block: 36px 44px; }
+  .praktisk-kort { padding-inline: 24px; }
+  .afslutning { margin-bottom: 44px; }
+  .sidefod { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .projekt-note { margin-left: 0 !important; }
+}
